@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap');
+
+
+:root{
+    --green: #03C988;
+    --black: #333;
+    --white: #fff;
+    --Blue: #54BAB9;
+    --light-bg: #AEE2FF;
+    --border:.2rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1)
+  }
+
+  ::selection {
+    background: var(--Blue);
+    color: var(--white);
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(..);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: rgb(249,236,236);
+    background: radial-gradient(circle, rgba(249,236,236,1) 30%, rgba(185,243,228,1) 100%);
+}
+
+
+.container-form {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition:  all .5s ease-out;
+}
+
+.welcome-back {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.message {
+    padding: 1rem;
+}
+
+.message img {
+    margin: 1.5rem 0;
+    height: 6rem;
+    
+}
+
+.message h2 {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: var(--black);
+}
+
+.message h2 span{
+    color: var(--Blue);
+  }
+
+.message p {
+    font-size: 1rem;
+    padding: 1rem 0;
+    color: var(--black);
+}
+
+.message button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: var(--Blue);
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: var(--white);
+}
+
+.message button:hover, .formulario button:hover {
+    background-color: var(--green);
+    border: solid thin #222;
+}
+
+.formulario{
+    width: 400px;
+    padding: 1rem;
+    margin: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+.create-account {
+    padding: 2.7rem 0;
+    font-size: 1.7rem;
+}
+
+.cuenta-gratis {
+    background: transparent;
+    padding: 2rem 0;
+    color: var(--black);
+}
+
+.formulario input {
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: white thin solid;
+    text-align: center;
+    outline: none;
+    padding: .2rem 0;
+    font-size: .9rem;
+    color: #474747
+}
+
+
+
+/* .formulario input[type="button"] {
+    width: 60%;
+    margin: auto;
+    border: solid thin white;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: white;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+} */
+
+.formulario button{
+    width: 60%;
+    padding: .7rem;
+    font-weight: 400;
+    background-color: var(--Blue);
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+    margin-top: 2rem;
+    transition: all .3s ease-in;
+    color: var(--white);
+}
+
+
+
+.sign-in {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sign-in.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sign-up.active {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.gif {
+    animation: repetir-gif 2s linear infinite;
+  }
+  
+  @keyframes repetir-gif {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

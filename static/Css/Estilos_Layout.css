@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap');
+
+:root{
+    --green: #03C988;
+    --black: #333;
+    --white: #fff;
+    --Blue: #54BAB9;
+    --light-bg: #AEE2FF;
+    --border:.2rem solid rgba(0,0,0,.1);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1)
+  }
+
+  ::selection {
+   background: var(--Blue);
+   color: var(--white);
+   }
+
+*{
+    font-family: 'Poppins',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none !important;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 80%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+  }
+
+body{
+    background-color: #f2f2f2;
+    font-size: 14px;
+    margin-left: 80px;
+    margin-top: 80px;
+    transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+main{
+    padding: 20px;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 200;
+}
+
+.container{
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    transform: translateX(10px);
+}
+
+.container i{
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    color: var(--Blue);
+}
+
+/*Estilos de toda la barra lateral del nav*/
+.menu__side{
+    width: 80px;
+    height: 100%;
+    background-color: var(--black);
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 18px;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-right: 10px solid #333;
+    border-radius: 0px 15px 15px 0px;
+    transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+
+/*Ocultar scroll para chrome, safari y opera*/
+.menu__side::-webkit-scrollbar{
+    display: none;
+}
+
+/*Ocultar scroll para IE, Edge y Firefox*/
+.menu__side{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.Register {
+    font-size: 2.5rem;
+}
+
+.Register span{
+    font-size: 2.5rem;
+    color: #03C988;
+}
+
+
+.Total{
+    font-size: 2rem;
+}
+
+.veterinaria_logo a{
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: var(--white);
+    font-size: 15px;
+}
+
+.veterinaria_logo img{
+    width: 25px;
+    margin-right: 25px;
+}
+.options__menu{
+    padding: 20px 30px;
+    position: absolute;
+    top: 80px;
+    font-size: 62.5%;
+}
+
+.options__menu a{
+    color: #ffffffb2;
+    cursor: default;
+    display: block;
+    position: relative;
+    transition: color 300ms;
+}
+
+.options__menu a:hover{
+    color: white;
+}
+
+.options__menu .option{
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.options__menu .option img{
+    width: 25px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.options__menu .option h4{
+    font-weight: 300;
+    cursor: pointer;
+}
+
+a.selected{
+    color: #fff;
+}
+
+.selected:before{
+    content: '';
+    width: 3px;
+    height: 80%;
+    background: white;
+    position: absolute;
+    top: 10%;
+    left: -30px;
+}
+
+/*Clases para usar en JavaScript*/
+
+.body_move{
+    margin-left: 250px;
+}
+
+.menu__side_move{
+    width: 250px;
+}
+
+/*  ================   Estilos Pacientes   ====================*/
+div .btn-primary{
+    background-color: var(--Blue);
+    border-color: var(--black);
+}
+
+div .btn-primary:hover{
+    background-color: var(--green);
+}
+
+div .btn-danger{
+    background-color: indianred;
+}
+
+/* ESTILOS DE PAGINA LISTA DE CITAS */
+.table_Header{
+    background-color: var(--Blue);
+    color: var(--white);
+    border: #443f3f;
+}
+
+input[type="submit"] {
+    background-color: var(--Blue);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  input[type="submit"]:hover {
+    background-color: var(--green);
+  }
+
+
+
+@media screen and (max-width: 760px){
+    .body_move{
+        margin-left: 0px;
+    }
+
+    .menu__side_move{
+        width: 80px;
+        left: -80px;
+    }
+}

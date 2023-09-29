@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/Css/Login.css">
+    <link rel="shortcut icon" href="../static/Img/icono.ico">
+    <title>Veterinaria Lomito</title>
+</head>
+
+<body>
+    <!-- {% block body %} -->
+    <div class="container-form sign-in">
+        <form class="formulario border" action="/Login" method="POST">
+            <h2 class="create-account">Iniciar Sesion</h2>
+            <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
+            <input type="email" name="Correo" placeholder="Correo">
+            <input type="password" name="Password" placeholder="Contraseña">
+            <!-- <input type="button" value="Iniciar Sesion"> -->
+            <button type="submit">Iniciar Sesion</button>
+        </form>
+        <div class="welcome-back">
+            <div class="message">
+                <img src="../static/Img/registrarse.png" alt="" class="gif">
+                <h2> <span>Bienvenido</span> de nuevo</h2>
+                <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+                <button class="sign-in-btn">Registrarse</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-form sign-up">
+        <div class="welcome-back">
+            <div class="message">
+                <img src="../static/Img/log.gif" alt="" class="gif">
+                <h2>Bienvenido a <span>Veterinaria Lomito®</span> </h2>
+                <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+                <button class="sign-up-btn">Iniciar Sesion</button>
+            </div>
+        </div>
+
+        <form class="formulario border" action="/registrarse" method="POST">
+            <p class="cuenta-gratis">Registrarse</p>
+            <input type="text" name="Nombre" placeholder="Nombre">
+            <input type="text" name="Apellido1" placeholder="Primer Apellido">
+            <input type="text" name="Apellido2" placeholder="Segundo Apellido">
+            <input type="email" name="Correo" placeholder="Correo">
+            <input type="password" name="Password" placeholder="Contraseña">
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+
+    
+    <Script>
+    const $btnSignIn= document.querySelector('.sign-in-btn'),
+        $btnSignUp = document.querySelector('.sign-up-btn'),  
+        $signUp = document.querySelector('.sign-up'),
+        $signIn  = document.querySelector('.sign-in');
+        
+    document.addEventListener('click', e => {
+        if (e.target === $btnSignIn || e.target === $btnSignUp) {
+            $signIn.classList.toggle('active');
+            $signUp.classList.toggle('active')
+    }
+    });
+    </Script>
+    <!-- {% endblock %} -->
+</body>
+
+</html>

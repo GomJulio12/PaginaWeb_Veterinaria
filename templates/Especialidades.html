@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Lomito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/Css/Estilos.css">
+    <link rel="shortcut icon" href="../static/Img/icono.ico">
+</head>
+<body>
+   {% block body %}
+   <header class="header fixed-top">
+      <div class="container">
+          <div class="row align-items-center justify-content-between">
+              <a href="../templates/Index.html" class="logo">Veteri<span>naria</span></a>
+
+              <nav class="nav">
+                  <a href="../templates/home.html">Inicio</a>
+                  <a href="../templates/Especialidades.html">Especialidades</a>
+                  <a href="../templates/Servicios.html">Servicios</a>
+                  <a href="../templates/Quienes Somos.html">Quienes Somos</a>
+           </nav>
+              <a href="../templates/Login.html" class="btn">Iniciar Sesion</a>
+          </div>
+      </div>
+  </header>
+
+
+<!-- process section starts  -->
+
+<section class="Especialidades">
+
+   <h1 class="heading">Especialidades</h1>
+
+   <div class="box-container container">
+
+      <div class="box">
+         <img src="../static/Img/Perros.png" alt="">
+         <h3>Cardiología</h3>
+         <p>La Dra. (Nombre de la doctora)  es nuestra especialista en Cardiología Veterinaria 
+            en Clinica Veterinaria Lomito®, además de tener una especialidad en medicina 
+            y cirugía de perros y gatos, cuenta con una maestría en Cardiología Veterinaria.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/process-2.png" alt="">
+         <h3>Acupura y Electroacupuntra</h3>
+         <p>La acupuntura y electroacupuntura se ha utilizado por años como un método alternativo 
+            para el control de malestares frecuentemente encontrados en la consulta veterinaria, 
+            tales como artritis, osteoartritis, enfermedades de disco intervertebral por mencionar algunos.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/process-3.png" alt="">
+         <h3>Ortopedia</h3>
+         <p>Contamos con la colaboración de médicos especialistas en ortopedia veterinaria, con la experiencia y 
+            conocimiento que su mascota requiere.</p>
+            <p>Los pacientes son estabilizados por nuestros médicos especialistas para después ser evaluados por 
+               un médico experto en ortopedia veterinaria, quien realiza un examen, tanto ortopédico como 
+               neurológico especializado.</p>
+      </div>
+
+      <div class="box">
+         <img src="../static/Img/Perros.png" alt="">
+         <h3>Terapia Laser</h3>
+         <p>La fotobiomodulación con láser veterinario es una terapia comprobada desde hace muchos años, 
+            la Terapia Láser la ha llevado al siguiente nivel, obteniendo nuevos y mejores beneficios para 
+            tu mascota en menos tiempo, sin efectos secundarios.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/process-2.png" alt="">
+         <h3>Oftalmología</h3>
+         <p>La oftalmología Veterinaria es una especialidad con mucho auge en los últimos años, 
+            ya que los pacientes requieren de una revisión por un especialista en la materia. </p>
+         <p>Durante la consulta de oftalmología veterinaria, se realiza una evaluación profunda y 
+            detallada para alcanzar un diagnóstico y tratamiento oportuno de nuestros pacientes, 
+            además contamos con los medicamentos especializados para poder recibir el tratamiento correcto.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/process-3.png" alt="">
+         <h3>Inseminacion Artificial en Perros</h3>
+         <p>La reproducción canina asistida principalmente por inseminación artificial es cada vez mas 
+            frecuente sobre todo en perros de raza por su efectividad y seguridad.
+            En Clinica Veterinaria Lomito® realizamos manejo la reproducción canina, 
+            enfocada a lograr historias exitosas ya sea por cruza de perros o con inseminaciones artificiales.
+      </div>
+
+   </div>
+
+</section>
+
+<!-- process section ends -->
+{% endblock %}
+
+</body>
+</html>

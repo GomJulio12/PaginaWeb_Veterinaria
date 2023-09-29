@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename = 'imgs/favicon.png') }}">
+    <title>Listar registrosL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/milligram.min.css') }}">
+    <style>
+        h2{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+
+        tr, td {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+   
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="column">
+                <h2 class="text-center">
+                    Registro de citas 
+                </h2>
+                <hr>
+            </div>
+          </div>
+            
+          <h3>Total de citas registradas {{ dataTotal }}</h3>
+        <div class="row">
+            
+        <!-- {{ dataCita }} -->
+        {% if (dataVW_Cita) %}
+
+            <table>
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Observaciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for C in dataVW_Cita %}    
+                        <tr>
+                            <td>{{ C.id }}</td>
+                            <td>{{ C.Nombre }}</td>
+                            <td>{{ C.Fecha }}</td>
+                            <td>{{ C.Hora }}</td>
+                            <td>{{ C.Observaciones }} </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+        {% else %}
+            <p style="text-align: center;">No hay Citas 😭 </p>
+        {% endif %}
+
+        </div>
+    </div>
+
+</body>
+</html>

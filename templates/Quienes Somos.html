@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Lomito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/Css/Estilos.css">
+    <link rel="shortcut icon" href="../static/Img/icono.ico">
+</head>
+<body>
+    
+    <!-- {% block body %} -->
+    <header class="header fixed-top">
+
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <a href="../templates/Index.html" class="logo">Veteri<span>naria</span></a>
+
+                <nav class="nav">
+                    <a href="../templates/home.html">Inicio</a>
+                    <a href="../templates/Especialidades.html">Especialidades</a>
+                    <a href="../templates/Servicios.html">Servicios</a>
+                    <a href="../templates/Quienes Somos.html">Quienes Somos</a>
+                </nav>
+
+                <a href="../templates/Login.html" class="btn">Iniciar Sesion</a>
+            </div>
+        </div>
+    </header>
+
+
+<section class="Acerca-de" id="Acerca_De">
+
+    <div class="container">
+ 
+       <div class="row align-items-center">
+ 
+          <div class="col-md-6 image">
+             <img src="images/about-img.jpg" class="w-100 mb-5 mb-md-0" alt="">
+          </div>
+ 
+          <div class="col-md-6 content">
+             <span>¿Quienes Somos?</span>
+             <h3>Pestaña en Mantenimiento</h3>
+             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam cupiditate vero in provident ducimus. Totam quas labore mollitia cum nisi, sint, expedita rem error ipsa, nesciunt ab provident. Aperiam, officiis!</p>
+             <a href="../templates/Contacto.html" class="btn">ir a Contactos</a>
+          </div>
+ 
+       </div>
+ 
+    </div>
+ 
+ </section>
+
+ <section class="Contacto" id="Contacto">
+
+    <h1 class="heading">En Mantenimiento</h1>
+ 
+       <span>Nombre :</span>
+       <input type="text" name="name" placeholder="Ingresa tu nombre" class="box" required>
+       <span>Correo :</span>
+       <input type="email" name="email" placeholder="Ingresa tu correo" class="box" required>
+       <span>Numero :</span>
+       <input type="number" name="number" placeholder="Numero de Telefono" class="box" required>
+       <span>Fecha De Nacimiento :</span>
+       <input type="datetime-local" name="date" class="box" required>
+       <input type="submit" value="lechazo" name="submit" class="link-btn">
+    </form>  
+ 
+ </section>
+
+ <!-- {% endblock %} -->
+ <!-- about section ends -->
+    
+</body>
+</html>

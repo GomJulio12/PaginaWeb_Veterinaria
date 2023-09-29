@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Lomito</title>
+    <link rel="shortcut icon" href="../static/Img/icono.ico">
+    <link rel="stylesheet" href="../static/Css/Estilos_Layout.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+<!-- 
+    icon__menu -->
+
+
+    <header>
+        <div class="container">
+            <i class="fas fa-bars" id="btn_open"></i>
+        </div>
+    </header>
+
+    <div class="menu__side" id="menu_side">
+
+        <div class="veterinaria_logo">
+            <a href="../templates/Index.html">
+                <img src="../static/Img/veterinario.png" alt="">
+                <h4>Veterinaria</h4>
+            </a>
+        </div>
+
+        <div class="options__menu">	
+
+            <a href="../templates/Paciente.html" class="selected">
+                <div class="option">
+                    <img src="../static/Img/Nav_Mascota.png" alt="">
+                    <h4>Pacientes</h4>
+                </div>
+            </a>
+            
+            <a href="../templates/Agendar_Citas.html">
+                <div class="option">
+                    <img src="../static/Img/Nav_Cita.png" alt="">
+                    <h4>Agendar Citas</h4>
+                </div>
+            </a>
+
+            <a href="../templates/Citas.html">
+                <div class="option">
+                    <img src="../static/Img/Nav_Citas Lista.png" alt="">
+                    <h4>Citas</h4>
+                </div>
+            </a>
+
+            <a href="../templates/Personales.html">
+                <div class="option">
+                    <img src="../static/Img/Nav_veterinario.png" alt="">
+                    <h4>Veterinarios</h4>
+        
+                </div>
+            </a>
+
+            <!-- <a href="#">
+                <div class="option">
+                    <i class="far fa-id-badge" title="Contacto"></i>
+                    <h4>Contacto</h4>
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="option">
+                    <i class="far fa-address-card" title="Nosotros"></i>
+                    <h4>Nosotros</h4>
+                </div>
+            </a> -->
+
+        </div>
+
+    </div>
+
+    <main>
+      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  
+      <br> <br> <br> <br> <br>
+      <div class="container">
+        <div class="card shadow">
+            <div class="card-body">
+                <form action="/Agregar_P" method="POST">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control mb-3" name="Nombre">
+                        </div>
+                        <div class="col">
+                            <label>Especie</label>
+                            <input type="text" class="form-control mb-3" name="Especie">
+                        </div>
+                        <div class="col">
+                            <label>Raza</label>
+                            <input type="text" class="form-control mb-3" name="Raza">
+                        </div>
+                        <div class="col">
+                            <label>Nacimiento</label>
+                            <input type="date" class="form-control mb-3" name="F_Nacimiento">
+                        </div>
+                        <div class="col">
+                            <label>Genero</label>
+                            <input type="text" class="form-control mb-3" name="Genero">
+                        </div>
+                        <div class="col">
+                            <label>Peso</label>
+                            <input type="text" class="form-control mb-3" name="Peso">
+                        </div>
+                        <div class="col">
+                            <label>Cod Propietario</label>
+                            <input type="text" class="form-control mb-3" name="id_Propietario">
+                        </div>
+
+                        <div class="col">
+                            <button class="btn btn-primary mb-3 mt-4" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+
+                <!-- Tabla -->
+                <!--Encabezado de la Tabla Titulo -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Dueño</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Especie</th>
+                            <th scope="col">Raza</th>
+                            <th scope="col">Nacimiento</th>
+                            <th scope="col">Genero</th>
+                            <th scope="col">Peso</th>
+                            <th scope="col">Modificar</th>
+                            <th scope="col">Eliminar</th>
+                            <th scope="col">Imprimir</th>
+                        </tr>
+                    </thead>
+
+                <tbody>
+                    {% for d in data %}
+                        <tr>
+                            <td>{{d.id_Mascota}}</td>
+                            <td>{{d.Dueño}}</td>
+                            <td>{{d.Nombre}}</td>
+                            <td>{{d.Especie}}</td>
+                            <td>{{d.Raza}}</td>
+                            <td>{{d.F_Nacimiento}}</td>
+                            <td>{{d.Genero}}</td>
+                            <td>{{d.Peso}}</td>
+                            <td><button class="btn btn-primary btn-sm" id="btn-edit{{d.id_Mascota}}" data-bs-toggle="modal" data-bs-target="#modal{{d.id_Mascota}}">Modificar</button></td>
+                            <td><a href="{{url_for('Eliminar', id=d.id_Mascota)}}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                            <td class="printer"><ion-icon name="print"></ion-icon></td>
+                        </tr>
+
+                        <!-- modal -->
+
+                        <div class="modal fade" id="modal{{d.id_Mascota}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">{{d.Nombre}}</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="/Modificar/{{d.id_Mascota}}" method="POST">
+                                        <label>Nombre</label>
+                                        <input type="text" class="form-control mb-3" name="Nombre" value="{{d.Nombre}}">
+                                        <label>Especie</label>
+                                        <input type="text" class="form-control mb-3" name="Especie" value="{{d.Especie}}">
+                                        <label>Raza</label>
+                                        <input type="text" class="form-control mb-3" name="Raza" value="{{d.Raza}}">
+                                        <label>Nacimiento</label>
+                                        <input type="date" class="form-control mb-3" name="F_Nacimiento" value="{{d.F_Nacimiento}}">
+                                        <label>Genero</label>
+                                        <input type="text" class="form-control mb-3" name="Genero" value="{{d.Genero}}">
+                                        <label>Peso</label>
+                                        <input type="text" class="form-control mb-3" name="Peso" value="{{d.Peso}}">
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+
+     
+    </main>
+
+    <script src="../static/Js/Script_Layout.js"></script>
+
+</body>
+</html>

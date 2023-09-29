@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <h1 class="text-center mt-5 mb-5 text-primary">Veterinaria Lomito</h1>
+
+    <!-- Parte Para Agregar Pacientes -->
+    <div class="container">
+        <div class="card shadow">
+            <div class="card-body">
+                <form action="/Agregar_P" method="POST">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control mb-3" name="Nombre">
+                        </div>
+                        <div class="col">
+                            <label>Apellidos</label>
+                            <input type="text" class="form-control mb-3" name="Apellidos">
+                        </div>
+                        <div class="col">
+                            <label>Alias Mascota</label>
+                            <input type="text" class="form-control mb-3" name="Mascota">
+                        </div>
+
+                        <div class="col">
+                            <label>Especie</label>
+                            <input type="text" class="form-control mb-3" name="Especie">
+                        </div>
+                        <div class="col">
+                            <label>Raza</label>
+                            <input type="text" class="form-control mb-3" name="Raza">
+                        </div>
+                        <div class="col">
+                            <label>Nacimiento</label>
+                            <input type="date" class="form-control mb-3" name="Nacimiento">
+                        </div>
+                        <div class="col">
+                            <label>Observaciones</label>
+                            <input type="text" class="form-control mb-3" name="Observaciones">
+                        </div>
+
+                        <div class="col">
+                            <button class="btn btn-primary mb-3 mt-4" type="submit">Guardar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+
+                <!-- Tabla -->
+                <!--Encabezado de la Tabla Titulo -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Alias Mascota</th>
+                            <th scope="col">Especie</th>
+                            <th scope="col">Raza</th>
+                            <th scope="col">Nacimiento</th>
+                            <th scope="col">Observaciones</th>
+                            <th scope="col">Modificar</th>
+                            <th scope="col">Eliminar</th>
+                            <th scope="col">Imprimir</th>
+                        </tr>
+                    </thead>
+
+                <tbody>
+                    {% for d in data %}
+                        <tr>
+                            <td>{{d.id_Pacientes}}</td>
+                            <td>{{d.Nombre}}</td>
+                            <td>{{d.Apellidos}}</td>
+                            <td>{{d.AliasMascota}}</td>
+                            <td>{{d.Especie}}</td>
+                            <td>{{d.Raza}}</td>
+                            <td>{{d.Nacimiento}}</td>
+                            <td>{{d.Observaciones}}</td>
+                            <td><button class="btn btn-primary btn-sm" id="btn-edit{{d.id_Pacientes}}" data-bs-toggle="modal" data-bs-target="#modal{{d.id_Pacientes}}">Modificar</button></td>
+                            <td><a href="{{url_for('Eliminar', id=d.id_Pacientes)}}" class="btn btn-danger btn-sm">Eliminar</a></td>
+                        </tr>
+
+                        <!-- modal -->
+
+                        <div class="modal fade" id="modal{{d.id_Pacientes}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">{{d.Nombre}}</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="/Modificar/{{d.id_Pacientes}}" method="POST">
+                                        <label>Nombre</label>
+                                        <input type="text" class="form-control mb-3" name="Nombre" value="{{d.Nombre}}">
+                                        <label>Apellidos</label>
+                                        <input type="text" class="form-control mb-3" name="Apellidos" value="{{d.Apellidos}}">
+                                        <label>Alias Mascota</label>
+                                        <input type="text" class="form-control mb-3" name="Mascota" value="{{d.AliasMascota}}">
+                                        <label>Especie</label>
+                                        <input type="text" class="form-control mb-3" name="Especie" value="{{d.Especie}}">
+                                        <label>Raza</label>
+                                        <input type="text" class="form-control mb-3" name="Raza" value="{{d.Raza}}">
+                                        <label>Nacimiento</label>
+                                        <input type="date" class="form-control mb-3" name="Nacimiento" value="{{d.Nacimiento}}">
+                                        <label>Observaciones</label>
+                                        <input type="text" class="form-control mb-3" name="Observaciones" value="{{d.Observaciones}}">
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                                </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+
+            </div>
+        </div>
+    </div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+</html>
